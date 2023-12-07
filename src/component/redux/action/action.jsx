@@ -2,17 +2,17 @@ export const getTodoList = () => ({
   type: "get.todolist"
 })
 
-export const addTodoList = (list) => ({
+export const actionAddTodoList = (list) => ({
   type: "add.todolist",
   payload: list
 })
 
-export const completeTodoList = (id) => ({
+export const actionCompleteTodoList = (id) => ({
   type: "complete.todolist",
   payload: id
 })
 
-export const removeTodoList = (id) => ({
+export const actionRemoveTodoList = (id) => ({
   type: "remove.todolist",
   payload: id
 })

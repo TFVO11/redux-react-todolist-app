@@ -1,24 +1,17 @@
 const initState = {
-  list : [
-    {
-      id: "",
-      title: "",
-      date: "",
-      isComplete: false,
-    },
-  ]
+  list : []
 };
 
 const todoListReducer = (state=initState, action) => {
   switch (action.type) {
-    case "get.todolist" : {
-      return {
-        state
-      }
-    }
 
     case "add.todolist": {
-      const addtodoList = action.payload.list;
+      const addtodoList = action.payload;
+      const id = Math.random().toString(36);
+
+      
+      addtodoList.id = id;
+      console.log("addtodoList", state.list)
       return {
         ...state,
         list: [...state.list, addtodoList]
@@ -36,7 +29,7 @@ const todoListReducer = (state=initState, action) => {
       })
       return {
         ...state,
-        list: [updatedList]
+        list: updatedList
       }
     }
     case "remove.todolist" : {
@@ -45,7 +38,7 @@ const todoListReducer = (state=initState, action) => {
 
       return {
         ...state,
-        list: [removedList]
+        list: removedList
       }
     }
 
