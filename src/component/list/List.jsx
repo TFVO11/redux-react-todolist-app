@@ -1,10 +1,11 @@
 import React from 'react'
+import { ListBox } from './List.style'
 
-function List(todolist) {
+function List() {
   return (
-    <div>
-      <ul>
-        {todolist.map(item => {
+    <ListBox>
+      <ul>hello world
+        {/* {todolist.map(item => {
           return (
             <li>
               <p>{item.index}</p>
@@ -13,9 +14,9 @@ function List(todolist) {
               <button id={item.index}>삭제</button>
             </li>
           )
-        })}
+        })} */}
       </ul>
-    </div>
+    </ListBox>
   )
 }
 

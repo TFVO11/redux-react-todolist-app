@@ -1,10 +1,9 @@
 import React from 'react'
+import { ClearInput } from './Input.style'
 
-function Input() {
+function Input(props) {
   return (
-    <div>
-      
-    </div>
+    <ClearInput name={props.name} {...props.input}/>
   )
 }
 

@@ -9,7 +9,7 @@ const initState = {
   ]
 };
 
-const listRuducer = (state=initState, action) => {
+const todoListReducer = (state=initState, action) => {
   switch (action.type) {
     case "get.todolist" : {
       return {
@@ -54,4 +54,6 @@ const listRuducer = (state=initState, action) => {
   }
   
 }
+
+export default todoListReducer;
 

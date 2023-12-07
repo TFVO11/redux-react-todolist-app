@@ -1,11 +1,13 @@
 import React from 'react'
 import AddTodoListForm from './AddTodoListForm'
+import { Title, ContentBox } from './AddTodoList.style'
 
 function AddTodoList() {
   return (
-    <div>
+    <ContentBox>
+      <Title>TO DO LIST</Title>
       <AddTodoListForm />
-    </div>
+    </ContentBox>
   )
 }
 

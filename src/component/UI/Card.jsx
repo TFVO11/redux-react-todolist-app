@@ -1,10 +1,9 @@
 import React, {Fragment} from 'react'
 
-
-function Content(props) {
+function Card(props) {
   return (
     <Fragment>{props.children}</Fragment>
   )
 }
 
-export default Content
+export default Card
