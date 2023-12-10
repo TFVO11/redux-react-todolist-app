@@ -1,9 +1,8 @@
 import style from "styled-components";
-import Content from "../UI/Content";
-import Input from "../UI/Input";
+import { base_color } from "../UI/color_type";
 
 export const ContentBox = style.div`
-  background: #886f50;
+  background: ${base_color.background};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,8 +19,8 @@ export const ContentBox = style.div`
 `;
 
 export const Title = style.div`
-  background: #364679;
-  color: #FEE601;
+  background: ${base_color.title};
+  color: ${base_color.title_txt};
   width: 50%;
 
   text-align: center;
@@ -34,9 +33,9 @@ export const Title = style.div`
 `;
 
 export const InputBox = style.div`
-  background: #494039;
+  background: ${base_color.inputbox};
 
-  width: 100%;
+  width: 90%;
   padding: 10px;
 
   margin-top: 12px;
@@ -51,9 +50,9 @@ export const InputBox = style.div`
 export const Button = style.button`
   border: none;
   border-radius: 5px;
-  background: #b08e68;
+  background: ${base_color.button};
 
-  color: #d7d1d1;
+  color: ${base_color.button_txt};
   font-size: 25px;
   font-weight: bold;
   -webkit-text-stroke: 0.2px black;
@@ -63,10 +62,12 @@ export const Button = style.button`
   margin-left: 12px;
 
   &:hover {
-    background: #b08e90;
+    background: ${base_color.button_hover};
   }
 `
 
 export const Form = style.form`
   width: 70%;
+  display: flex;
+  justify-content: center;
 `

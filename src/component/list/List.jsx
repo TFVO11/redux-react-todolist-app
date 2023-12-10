@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListBox } from './List.style'
+import { ListBox, ListItem, ListOl } from './List.style'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { actionRemoveTodoList } from '../redux/action/action'
@@ -9,6 +9,7 @@ function List() {
   const todolist = useSelector(state => state.list);
   const dispatch = useDispatch();
 
+  console.log(todolist)
 
 
   const handleClick = (e, callback) => {
@@ -25,17 +26,18 @@ function List() {
   
   return (
     <ListBox>
-      <ul>
-      {todolist.length !== 0 ? todolist.map(item => {
+      <ListOl>
+      {todolist.length !== 0 ? todolist.map((item, index) => {
           return (
-            <li id={item.id} onClick={(e) => handleClick(e, callbackCompliteDispatch)}>
-              <p>{item.title}</p>
-              <p>{item.date}</p>
+            <ListItem id={item.id} >
+              <p>{item.isComplete ? "☆" : index + 1}</p>
+              <h4 id={item.id} onClick={(e) => handleClick(e, callbackCompliteDispatch)}>{item.title}</h4>
+              <h5>{item.date}</h5>
               <button onClick={(e) => handleClick(e, callbackRemoveDispatch)} id={item.id}>삭제</button>
-            </li>
+            </ListItem>
           ) 
         }) : <p>input your to do list!</p>}
-      </ul>
+      </ListOl>
     </ListBox>
   )
 }
