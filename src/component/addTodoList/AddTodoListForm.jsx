@@ -22,6 +22,8 @@ function AddTodoListForm(props) {
       dispatch(actionAddTodoList(list))
     } else { console.log("다 적어라")}
 
+    setList(LIST);
+
   };
 
   const handleChange = (e) => {

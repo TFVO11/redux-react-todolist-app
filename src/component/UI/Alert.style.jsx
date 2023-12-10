@@ -9,6 +9,8 @@ export const Alert = styled.div`
   border-radius: 12px;
   opacity: 50%;
 
+  transform: translate(-50%, -50%);
+
   color: ${overlay.backdrop_txt};
   background: ${overlay.backdrop};
 
