@@ -11,7 +11,7 @@ const LIST = {
   isComplete: false,
 };
 
-function AddTodoListForm() {
+function AddTodoListForm(props) {
   const dispatch = useDispatch();
   const [list, setList] = useState(LIST);
 
@@ -62,7 +62,7 @@ function AddTodoListForm() {
           }}
         />
         <Input onChange={handleChange} name="Date" input={{ type: "date", value: list.date} }/>
-        <Button>제출</Button>
+        <Button onClick={props.onPopup}>제출</Button>
       </InputBox>
     </Form>
   );
