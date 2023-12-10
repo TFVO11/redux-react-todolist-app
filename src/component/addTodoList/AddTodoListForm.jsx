@@ -8,7 +8,7 @@ const LIST = {
   id: "",
   title: "",
   date: "",
-  isComlete: false,
+  isComplete: false,
 };
 
 function AddTodoListForm() {

@@ -19,13 +19,13 @@ const todoListReducer = (state=initState, action) => {
     }
     case "complete.todolist": {
       const id = action.payload
-      const updatedList = state.list.map(list => {
-        if (id === list.id) {
+      const updatedList = state.list.map(item => {
+        if (id === item.id) {
           return {
-            ...list.isComplete,
+            ...item,
             isComplete: true,
           }
-        } else { return list}
+        } else { return item}
       })
       return {
         ...state,
