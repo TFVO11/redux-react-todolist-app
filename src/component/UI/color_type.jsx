@@ -17,3 +17,8 @@ export const sub_color = {
   button_hover: "#b08e90",
   button_txt: "#d7d1d1"
 }
+
+export const overlay = {
+  backdrop: "rgba(0, 0, 0, 0.75)",
+  backdrop_txt: "white",
+}
