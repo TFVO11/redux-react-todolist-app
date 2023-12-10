@@ -18,36 +18,40 @@ function AddTodoListForm(props) {
   const addTodoList = (e) => {
     e.preventDefault();
 
-    if(list.title !== "" && list.date !== "") {
-      dispatch(actionAddTodoList(list))
-    } else { console.log("다 적어라")}
+    if (list.title !== "" && list.date !== "") {
+      dispatch(actionAddTodoList(list));
+      props.onList(list);
+    } else {
+      props.onList(list);
+    }
 
     setList(LIST);
-
   };
 
   const handleChange = (e) => {
     switch (e.target.name) {
-      case "List": {
-        setList((preState) => {
-          return {
-            ...preState,
-            title: e.target.value,
-          };
-        });
-      }
-      break;
+      case "List":
+        {
+          setList((preState) => {
+            return {
+              ...preState,
+              title: e.target.value,
+            };
+          });
+        }
+        break;
 
-      case "Date": {
-        setList((preState) => {
-          return {
-            ...preState,
-            date: e.target.value,
-          };
-        });
-      }
+      case "Date":
+        {
+          setList((preState) => {
+            return {
+              ...preState,
+              date: e.target.value,
+            };
+          });
+        }
 
-      break;
+        break;
     }
   };
 
@@ -63,7 +67,11 @@ function AddTodoListForm(props) {
             value: list.title,
           }}
         />
-        <Input onChange={handleChange} name="Date" input={{ type: "date", value: list.date} }/>
+        <Input
+          onChange={handleChange}
+          name="Date"
+          input={{ type: "date", value: list.date }}
+        />
         <Button onClick={props.onPopup}>제출</Button>
       </InputBox>
     </Form>
