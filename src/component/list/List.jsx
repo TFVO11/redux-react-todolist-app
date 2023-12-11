@@ -9,9 +9,6 @@ function List() {
   const todolist = useSelector(state => state.list);
   const dispatch = useDispatch();
 
-  console.log(todolist)
-
-
   const handleClick = (e, callback) => {
       const id = e.target.id;
       callback(id);
