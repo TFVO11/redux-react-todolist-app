@@ -1,37 +1,46 @@
-import React, { Fragment } from 'react'
-import { actionUIMode } from '../redux/action/modeAction'
-
+import React, { Fragment } from "react";
+import ReactDOM from "react-dom";
+import { actionUIMode } from "../redux/action/modeAction";
+import { CardDiv, BasicButton, DarkButton } from "./Toolbar.style";
+import { useDispatch } from "react-redux";
 
 const mode = {
   basic_mode: "basic",
-  dark_mode: "dark"
-}
+  dark_mode: "dark",
+};
 
-function Toolbar() {
+const Overlay = () => {
+
+  const dispatch = useDispatch()
+
   const handleUIMode = (modeFn) => {
-    modeFn()
-  }
+    modeFn();
+  };
 
   const modeBasic = () => {
-    actionUIMode(mode.basic_mode)
-  }
+    dispatch(actionUIMode(mode.basic_mode));
+  };
 
   const modeDark = () => {
-    actionUIMode(mode.dark_mode)
-  }
+    dispatch(actionUIMode(mode.dark_mode));
+  };
 
   return (
-    <Fragment>
-      <div>
-        <button onClick={() => handleUIMode(modeBasic)}>
-          일반 모드
-        </button>
-        <button onClick={() => handleUIMode(modeDark)}>
-          다크 모드
-        </button>
-      </div>
-    </Fragment>
-  )
+    <CardDiv>
+      <BasicButton onClick={() => handleUIMode(modeBasic)}>
+        일반 모드
+      </BasicButton>
+      <DarkButton onClick={() => handleUIMode(modeDark)}>다크 모드</DarkButton>
+    </CardDiv>
+  );
+};
+
+const portalElement = document.getElementById("alert");
+
+function Toolbar() {
+  return (
+    <Fragment>{ReactDOM.createPortal(<Overlay />, portalElement)}</Fragment>
+  );
 }
 
-export default Toolbar
+export default Toolbar;

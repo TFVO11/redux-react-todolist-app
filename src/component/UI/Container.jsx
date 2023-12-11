@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import { ContainerBox } from './Container.style'
 
 function Container(props) {
   return (
-    <ContainerBox>{props.children}</ContainerBox>
+    <ContainerBox mode={props.mode}>{props.children}</ContainerBox>
   )
 }
 

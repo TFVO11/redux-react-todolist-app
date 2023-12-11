@@ -3,7 +3,7 @@ import { ClearInput } from './Input.style'
 
 function Input(props) {
   return (
-    <ClearInput name={props.name} {...props.input} onChange={props.onChange}/>
+    <ClearInput mode={props.mode} name={props.name} {...props.input} onChange={props.onChange}/>
   )
 }
 

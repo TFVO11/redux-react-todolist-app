@@ -1,9 +1,10 @@
 import style from 'styled-components'
+import backgroundType from '../../utill/backgroundType'
 
 export const ClearInput = style.input`
   outline: none;
   
-  background: #dab46d;
+  background: ${(props) => backgroundType(props.mode).input};
   width: 80%;
 
   border-radius: 5px;

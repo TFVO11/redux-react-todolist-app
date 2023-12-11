@@ -1,8 +1,8 @@
 import style from "styled-components";
-import { basic_color } from "../UI/color_type";
+import backgroundType from "../../utill/backgroundType";
 
 export const ContentBox = style.div`
-  background: ${basic_color.background};
+  background: ${(props) => backgroundType(props.mode).background};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,8 +19,8 @@ export const ContentBox = style.div`
 `;
 
 export const Title = style.div`
-  background: ${basic_color.title};
-  color: ${basic_color.title_txt};
+  background: ${(props) => backgroundType(props.mode).title};
+  color: ${(props) => backgroundType(props.mode).title_txt};
   width: 50%;
 
   text-align: center;
@@ -33,7 +33,7 @@ export const Title = style.div`
 `;
 
 export const InputBox = style.div`
-  background: ${basic_color.inputbox};
+  background: ${(props) => backgroundType(props.mode).inputbox};
 
   width: 90%;
   padding: 10px;
@@ -50,9 +50,9 @@ export const InputBox = style.div`
 export const Button = style.button`
   border: none;
   border-radius: 5px;
-  background: ${basic_color.button};
+  background: ${(props) => backgroundType(props.mode).button};
 
-  color: ${basic_color.button_txt};
+  color: ${(props) => backgroundType(props.mode).button_txt};
   font-size: 25px;
   font-weight: bold;
   -webkit-text-stroke: 0.2px black;
@@ -62,7 +62,7 @@ export const Button = style.button`
   margin-left: 12px;
 
   &:hover {
-    background: ${basic_color.button_hover};
+    background: ${(props) => backgroundType(props.mode).button_hover};
   }
 `
 
