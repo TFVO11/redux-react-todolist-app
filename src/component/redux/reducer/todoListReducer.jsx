@@ -11,7 +11,7 @@ const todoListReducer = (state=initState, action) => {
 
       
       addtodoList.id = id;
-      console.log("addtodoList", state.list)
+      
       return {
         ...state,
         list: [...state.list, addtodoList]
