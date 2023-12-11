@@ -1,4 +1,4 @@
-initState = {
+const initState = {
   mode: "basic",
 };
 
@@ -6,6 +6,7 @@ const uiModeReducer = (state = initState, action) => {
   switch (action.type) {
     case "basic": {
       const mode = action.payload;
+
       return {
         ...state,
         mode: mode,
@@ -14,7 +15,6 @@ const uiModeReducer = (state = initState, action) => {
 
     case "dark": {
       const mode = action.payload;
-      d;
 
       return {
         ...state,

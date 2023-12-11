@@ -3,6 +3,7 @@ import AddTodoListForm from "./AddTodoListForm";
 import { Title, ContentBox } from "./AddTodoList.style";
 import AlertModal from "../UI/AlertModal";
 import handleListForm from "../../utill/handleListForm";
+import { useSelector } from "react-redux";
 
 const initState = {
   visible: false,
@@ -11,6 +12,7 @@ const initState = {
 
 function AddTodoList() {
   const [pops, setPops] = useState(initState);
+  const UI_mode = useSelector(state => state.uiModeReducer);
 
   const listFormValue = (list) => {
     setPops((pre) => {
@@ -35,10 +37,10 @@ function AddTodoList() {
   };
 
   return (
-    <ContentBox>
+    <ContentBox mode={UI_mode}>
       {pops.visible ? <AlertModal>{pops.massege}</AlertModal> : <></>}
-      <Title>TO DO LIST</Title>
-      <AddTodoListForm onPopup={handlePops} onList={listFormValue} />
+      <Title mode={UI_mode}>TO DO LIST</Title>
+      <AddTodoListForm mode={UI_mode} onPopup={handlePops} onList={listFormValue} />
     </ContentBox>
   );
 }

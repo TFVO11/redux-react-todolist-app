@@ -1,9 +1,10 @@
-import React from 'react'
 import { basic_color, dark_color } from '../component/UI/color_type'
 
 function backgroundType(type) {
-  switch (type) {
-    case "base" : {
+  const mode = type.mode;
+
+  switch (mode) {
+    case "basic" : {
       return basic_color;
     }
 

@@ -1,7 +1,8 @@
 import style from 'styled-components'
+import backgroundType from '../../utill/backgroundType'
 
 export const ListBox = style.div`
-  background: #6e77c6;
+  background: ${(props) => backgroundType(props.mode).listbox};
 
   display: flex;
   flex-direction: column;
@@ -49,7 +50,7 @@ export const ListItem = style.li`
 
 
 
-  background: #f5f5f5;
+  background: ${(props) => backgroundType(props.mode).list_item};
 
   border-radius: 10px;
   border: 1px solid black;
@@ -77,7 +78,7 @@ export const ListItem = style.li`
     cursor: pointer;
 
     &:hover {
-      background: red;
+      background: ${(props) => backgroundType(props.mode).list_item_hover};
     }
   }
 

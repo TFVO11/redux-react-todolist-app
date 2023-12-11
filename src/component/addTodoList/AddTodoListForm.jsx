@@ -56,9 +56,10 @@ function AddTodoListForm(props) {
   };
 
   return (
-    <Form action="submit" onSubmit={addTodoList}>
-      <InputBox>
+    <Form mode={props.mode} action="submit" onSubmit={addTodoList}>
+      <InputBox mode={props.mode}>
         <Input
+          mode={props.mode}
           onChange={handleChange}
           name="List"
           input={{
@@ -68,11 +69,12 @@ function AddTodoListForm(props) {
           }}
         />
         <Input
+        mode={props.mode}
           onChange={handleChange}
           name="Date"
           input={{ type: "date", value: list.date }}
         />
-        <Button onClick={props.onPopup}>제출</Button>
+        <Button mode={props.mode} onClick={props.onPopup}>제출</Button>
       </InputBox>
     </Form>
   );

@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux'
 import { actionRemoveTodoList } from '../redux/action/action'
 import { actionCompleteTodoList } from '../redux/action/action'
 
-function List() {
-  const todolist = useSelector(state => state.list);
+function List({mode}) {
+  const todolist = useSelector(state => state.todoListReducer.list);
   const dispatch = useDispatch();
 
   const handleClick = (e, callback) => {
@@ -22,11 +22,11 @@ function List() {
   }
   
   return (
-    <ListBox>
-      <ListOl>
+    <ListBox mode={mode}>
+      <ListOl mode={mode}>
       {todolist.length !== 0 ? todolist.map((item, index) => {
           return (
-            <ListItem id={item.id} >
+            <ListItem mode={mode} id={item.id} >
               <p>{item.isComplete ? "☆" : index + 1}</p>
               <h4 id={item.id} onClick={(e) => handleClick(e, callbackCompliteDispatch)}>{item.title}</h4>
               <h5>{item.date}</h5>

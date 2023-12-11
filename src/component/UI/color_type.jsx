@@ -5,7 +5,15 @@ export const basic_color = {
   inputbox: "#494039",
   button: "#b08e68",
   button_hover: "#b08e90",
-  button_txt: "#d7d1d1"
+  button_txt: "#d7d1d1",
+
+  listbox: "#6e77c6",
+  list_item: "#f5f5f5",
+  list_item_hover: "red",
+
+  container: "#d4be97",
+
+  input: "#dab46d",
 }
 
 export const dark_color = {
@@ -15,7 +23,15 @@ export const dark_color = {
   inputbox: "#494039",
   button: "#b08e68",
   button_hover: "#b08e90",
-  button_txt: "#d7d1d1"
+  button_txt: "#d7d1d1",
+
+  listbox: "#6e77c6",
+  list_item: "#f5f5f5",
+  list_item_hover: "red",
+
+  container: "#f5f5f5",
+  
+  input: "#dab46d",
 }
 
 export const overlay = {
@@ -38,3 +54,6 @@ export const mode_color = {
   card_color: "#f0b323",
 }
 
+export const container = {
+  
+}
