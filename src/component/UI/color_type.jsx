@@ -17,8 +17,8 @@ export const basic_color = {
 }
 
 export const dark_color = {
-  background: "black",
-  title: "#f5f5f5",
+  background: "#293250",
+  title: "#3E236E",
   title_txt: "#FEE601",
   inputbox: "#494039",
   button: "#b08e68",
@@ -29,8 +29,8 @@ export const dark_color = {
   list_item: "#f5f5f5",
   list_item_hover: "red",
 
-  container: "#f5f5f5",
-  
+  container: "#4D577A",
+
   input: "#dab46d",
 }
 
@@ -48,8 +48,8 @@ export const mode_color = {
   basic_button: "#fffafc",
   basic_button_txt: "#2582d7",
 
-  dark_button: "#060009",
-  dark_button_txt: "#442d59",
+  dark_button: "#442d59",
+  dark_button_txt: "#f5f5f5",
 
   card_color: "#f0b323",
 }
